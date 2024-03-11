@@ -1,0 +1,19 @@
+aside {
+    display: grid;
+    background-color: #2cfc59;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+
+    & header {
+        display: grid;
+        place-content: center;
+
+        & h1 {
+            text-align: center;
+        }
+
+        & img {
+            width: 10rem;
+        }
+    }
+}
