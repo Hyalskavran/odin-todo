@@ -14,6 +14,38 @@ aside {
 
         & img {
             width: 10rem;
+            padding: 1rem;
+        }
+    }
+
+    & ul {
+        width: 100%;
+        display: grid;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        grid-template-rows: repeat(6, 1fr);
+        justify-items: start;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.2rem;
+
+        & li {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 1rem;
+        }
+
+        & li:hover {
+            background-color: #7cff98;
+            cursor: pointer;
+        }
+
+        & img {
+            margin: 0;
+            padding: 1rem 2rem;
         }
     }
 }

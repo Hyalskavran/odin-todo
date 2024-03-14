@@ -14,8 +14,8 @@ export default function sidebar() {
     img.src = Logo;
     img.alt = 'Logo';
 
-    header.appendChild(name);
     header.appendChild(img);
+    header.appendChild(name);
     sidebar.appendChild(header);
 
     // NAVIGATION
