@@ -1,0 +1,107 @@
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background-color: orange;
+    padding: 1rem;
+    gap: 1rem;
+    align-items: center;
+    border-radius: 8px;
+    margin: 1rem;
+
+    & .title {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    & .description {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+
+    & .due-date-header {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+
+    & .due-date-time {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+    }
+
+    & .priority-header {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    & .priority-container {
+        grid-column: 2 / 4;
+        grid-row: 3 / 4;
+    }
+
+    & .green {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+    }
+
+    & .red {
+        grid-column: 3 / 4;
+        grid-row: 4 / 5;
+    }
+
+    & h2 {
+        margin: 0;
+        padding: 0;
+        font-weight: 900;
+        font-size: 1.2rem;
+        letter-spacing: 0.2rem;
+    }
+
+    & h4 {
+        margin: 0;
+        padding: 0;
+        font-weight: 900;
+        letter-spacing: 0.15rem;
+    }
+
+    & p {
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+    }
+
+    & button {
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: opacity 0.3s ease;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    & button:hover {
+        opacity: 0.8;
+    }
+    
+    & .green {
+        background-color: #00ff37;
+    }
+
+    & .red {
+        background-color: #ff5c5c;
+    }
+
+    & .priority-container {
+        height: 100%;
+        border: 1px solid #000;
+        border-radius: 8px;
+    }
+
+    & .priority-bar {
+        border-radius: inherit;
+        width: 0;
+        height: 100%;
+    }
+}
