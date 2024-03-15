@@ -1,8 +1,8 @@
 section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    background-color: orange;
+    background-color: #fffc47;
     padding: 1rem;
     gap: 1rem;
     align-items: center;
@@ -15,7 +15,7 @@ section {
     }
 
     & .description {
-        grid-column: 1 / 3;
+        grid-column: 1 / 4;
         grid-row: 2 / 3;
     }
 
@@ -25,8 +25,8 @@ section {
     }
 
     & .due-date-time {
-        grid-column: 3 / 4;
-        grid-row: 2 / 3;
+        grid-column: 4 / 5;
+        grid-row: 1 / 2;
     }
 
     & .priority-header {
@@ -35,17 +35,17 @@ section {
     }
 
     & .priority-container {
-        grid-column: 2 / 4;
+        grid-column: 2 / 5;
         grid-row: 3 / 4;
     }
 
     & .green {
-        grid-column: 2 / 3;
+        grid-column: 3 / 4;
         grid-row: 4 / 5;
     }
 
     & .red {
-        grid-column: 3 / 4;
+        grid-column: 4 / 5;
         grid-row: 4 / 5;
     }
 
@@ -71,7 +71,8 @@ section {
 
     & button {
         border: none;
-        padding: 1rem 2rem;
+        height: 100%;
+        /* padding: 1rem 2rem; */
         font-size: 1.1rem;
         cursor: pointer;
         border-radius: 8px;
@@ -86,11 +87,11 @@ section {
     }
     
     & .green {
-        background-color: #00ff37;
+        background-color: rgb(30, 165, 255);
     }
 
     & .red {
-        background-color: #ff5c5c;
+        background-color: #f92814;
     }
 
     & .priority-container {
