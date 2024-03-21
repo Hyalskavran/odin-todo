@@ -6,7 +6,7 @@ form {
     display: grid;
     margin: 2rem;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(7, 1fr);
     gap: 2rem;
     align-items: center;
     border-radius: 8px;
@@ -51,9 +51,19 @@ form {
         grid-row: 5 / 6;
     }
 
-    & .submit {
+    & .group-label {
+        grid-column: 1 / 2;
+        grid-row: 6 / 7;
+    }
+
+    & .group-select {
         grid-column: 2 / 3;
         grid-row: 6 / 7;
+    }
+
+    & .submit {
+        grid-column: 2 / 3;
+        grid-row: 7 / 8;
     }
 
     & label {
@@ -65,11 +75,13 @@ form {
     & input[type='text'],
       textarea,
       input[type='date'],
-      input[type='number'] {
+      input[type='number'],
+      select {
         height: 100%;
         padding: 0 1rem;
         border: 1px solid #333;
         border-radius: 8px;
+        background-color: white;
       }
 
     & textarea {

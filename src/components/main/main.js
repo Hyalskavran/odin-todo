@@ -1,12 +1,17 @@
 import './main.css'
-import { Todo, todo } from '../todos/todo-item'
-import createTodo from '../todos/todo-creation'
+import { Todo } from '../todos/todo-item'
+import { todoDom } from '../todos/todo-dom-handler'
+import { todoStorage } from '../todos/todo-storage-handler'
+import { createForm } from '../todos/form'
 
 export default function main() {
-    const main = document.querySelector('main')
+    todoStorage.setInitialGroup();
+    todoDom.buttonsGetGroup();
+    todoDom.sideNavButtons();
+    todoDom.renderTodos("LIZARD", 'main');
 
-    main.appendChild(todo.createTodo(todo.priority))
-    // main.appendChild(createTodo())
+    // main.appendChild(todoDom.renderTodo(todo))
+    // main.appendChild(createForm())
 
     return main
 }

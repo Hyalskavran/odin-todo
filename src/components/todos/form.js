@@ -1,6 +1,16 @@
 import './form.css'
+import { animals } from '../animals/animals'
+import { Todo } from './todo-item';
 
-export default function createTodo() {
+let todos = [];
+
+const storedTodos = localStorage.getItem('todos');
+if (storedTodos) {
+    todos = JSON.parse(storedTodos);
+    
+} 
+
+function createForm() {
     const form = document.createElement('form');
     
     const titleLabel = document.createElement('label');
@@ -40,6 +50,21 @@ export default function createTodo() {
     priorityInput.setAttribute('min', '1');
     priorityInput.setAttribute('max', '10');
 
+    const groupLabel = document.createElement('label');
+    groupLabel.classList.add('group-label');
+    groupLabel.textContent = 'Group:';
+
+    const groupSelect = document.createElement('select');
+    groupSelect.classList.add('group-select');
+    groupSelect.setAttribute('name', 'group');
+
+    animals.forEach(animal => {
+        const option = document.createElement('option');
+        option.value = animal.name;
+        option.textContent = animal.name;
+        groupSelect.appendChild(option);
+    });
+
     const submitButton = document.createElement('button');
     submitButton.classList.add('submit');
     submitButton.setAttribute('type', 'submit');
@@ -53,7 +78,31 @@ export default function createTodo() {
     form.appendChild(dueDateInput);
     form.appendChild(priorityLabel);
     form.appendChild(priorityInput);
+    form.appendChild(groupLabel);
+    form.appendChild(groupSelect);
     form.appendChild(submitButton);
 
+    form.addEventListener('submit', function(event) {
+        event.preventDefault()
+
+        const titleValue = titleInput.value;
+        const descriptionValue = descriptionTextArea.value;
+        const dueDateValue = new Date(dueDateInput.value);
+        const priorityValue = +priorityInput.value;
+        const groupValue = groupSelect.value;
+
+        try {
+            const todo = new Todo(titleValue, descriptionValue, dueDateValue, priorityValue, groupValue);
+        } catch (error) {
+            console.log(error.message);
+        }
+
+        this.reset()
+    })
+
     return form
+}
+
+export {
+    createForm
 }

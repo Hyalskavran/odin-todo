@@ -13,13 +13,16 @@ export default function createNavigationList() {
     navs.forEach(element => {
         const li = document.createElement('li');
         const img = new Image();
+        const btn = document.createElement('button');
+        btn.classList.add(element.name.split(' ').join('-'));
         
         img.src = element.imgSource;
         img.alt = element.name;
 
-        li.innerText = element.name;
-        li.appendChild(img);
+        btn.innerText = element.name;
+        btn.appendChild(img);
 
+        li.appendChild(btn);
         ul.appendChild(li);
     })
 

@@ -49,4 +49,17 @@ aside {
             padding: 1rem 2rem;
         }
     }
+
+    & button {
+        border: none;
+        background: none;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+    }
 }
